@@ -1,20 +1,20 @@
-﻿using AM.Infrastructure;
-using AM.ApplicationCore.Interfaces;
+﻿using SCA.Infrastructure;
+using SCA.ApplicationCore.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.Infrastructure
+namespace SCA.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AMContext _context;
+        private readonly SCAContext _context;
         private readonly Type _repositoryType;
         private bool disposedValue;
 
-        public UnitOfWork(AMContext context,Type repoType)
+        public UnitOfWork(SCAContext context,Type repoType)
         {
             _context=context;
             _repositoryType=repoType;   
@@ -37,8 +37,8 @@ namespace AM.Infrastructure
             {
                 if (disposing)
                 {
-                    // TODO: dispose managed state (managed objects)
                     Dispose(disposing: false);
+                    // TODO: dispose managed state (managed objects)
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override finalizer
@@ -48,11 +48,11 @@ namespace AM.Infrastructure
         }
 
         // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-        ~UnitOfWork()
-        {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-            Dispose(disposing: false);
-        }
+         ~UnitOfWork()
+         {
+             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+             Dispose(disposing: false);
+         }
 
         public void Dispose()
         {
