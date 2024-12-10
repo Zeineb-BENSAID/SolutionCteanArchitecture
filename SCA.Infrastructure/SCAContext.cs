@@ -19,6 +19,14 @@ namespace SCA.Infrastructure
             optionsBuilder.UseLazyLoadingProxies(true);
             base.OnConfiguring(optionsBuilder);
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            base.ConfigureConventions(configurationBuilder);
+        }
 
     }
 }
